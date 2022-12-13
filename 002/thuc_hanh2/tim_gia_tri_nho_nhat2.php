@@ -4,7 +4,6 @@ $min=$number[0];
 foreach($number as $key => $value) {
     if( $value < $min){
         $min = $value;
-        // $index =$key;
     }
 }
 echo 'so nho nhat :'.$min;

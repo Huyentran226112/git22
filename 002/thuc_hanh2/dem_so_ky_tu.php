@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
            }
 }
-echo $count;
+echo " kết quả :".($count);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +32,7 @@ echo $count;
 </head>
 <body>
 <form method="POST">
-    <input type="text" name ="nhap"placeholder="nhap so">
-    <input type="submit" value="add"/><br>
+    <input type="text" name ="nhap"placeholder="nhập ký tự cần tìm">
+    <input type="submit" value="tìm"/><br>
 </body>
 </html>
