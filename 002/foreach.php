@@ -14,7 +14,7 @@ $books = ['van','su','dia'];
         <?php } ?>
  </ul>
    <ul>
-    <?php foreach ($books as $book){: ?>
+    <?php foreach ($books as $book): ?>
         <li> <?php echo $book;?></li>
-        <?php endforeach ;?} 
+        <?php endforeach; ?>
     </ul>
