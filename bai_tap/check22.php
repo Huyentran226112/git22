@@ -70,9 +70,7 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ){
     $so_a=$_REQUEST['so_a'];
     $so_b=$_REQUEST['so_b'];
     $phep_tinh=$_REQUEST['phep_tinh'];
-    if($so_a==''&& $so_b==''){
-         echo 'hay nhap so a va b';
-    }else{
+    
         
     // xu li
     switch($phep_tinh){
@@ -98,7 +96,7 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ){
         
 }
 }
-}
+
 
 ?>
 <!DOCTYPE html>
