@@ -1,0 +1,53 @@
+<?php include_once '../db.php'; ?>
+<?php
+$id = $_GET['id'];
+$sql = "SELECT * FROM `categories` WHERE id = $id";
+    //debug sql
+    // var_dump($sql);
+    $stmt = $conn->query($sql);
+    $stmt->setFetchMode(PDO::FETCH_ASSOC);//array 
+    $stmt = $conn->query($sql);
+    $stmt->setFetchMode(PDO::FETCH_ASSOC);//array 
+
+    // Lay ve du lieu duy nhat
+    $row = $stmt->fetch();
+    // echo '<pre>';
+    // print_r($row);
+    // die();
+
+    //Xu ly form
+    if( $_SERVER['REQUEST_METHOD'] == "POST" ){
+        // in du lieu nguoi dung gui len
+        // echo '<pre>';
+        // print_r( $_REQUEST );
+        // die();
+
+        // Gan vao bien
+       
+        $TENSACH = $_REQUEST['name'];
+       
+        // Viet cau truy van
+        $sql = "UPDATE categories SET
+                name = '$TENSACH'
+                WHERE id = $id
+        ";
+        // Debug sql
+        // var_dump($sql);
+        // die();
+        
+        //Thuc hien truy van
+        $conn->exec($sql);
+
+        // chuyen huong ve trang danh sach
+        header("Location: list.php");
+    } 
+?>
+<?php include_once '../header.php'; ?>
+<div class="container-fluid px-4">
+<form action="" method="post">
+    TENTHELOAI: <input type="text" name="name" value="<?= $row['name'];?>"> <br>
+    <input type="submit" value="thêm">
+</form>
+</div>
+<?php include_once '../footer.php'; ?>
+
