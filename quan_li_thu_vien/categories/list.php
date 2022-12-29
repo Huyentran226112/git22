@@ -1,6 +1,11 @@
 <?php include_once '../db.php'; ?>
 <?php
 $sql = "SELECT * FROM `categories`";
+if( isset( $_GET["s"] )  ){
+    $s = $_GET["s"];
+    $s = trim($s); 
+    $sql .= " WHERE name LIKE '%$s%'";
+}
 $stmt = $conn->query($sql);
 $stmt->setFetchMode(PDO::FETCH_ASSOC);//array 
 $books = $stmt->fetchAll();
@@ -21,13 +26,13 @@ $books = $stmt->fetchAll();
         </tr>
     </thead>
     <tbody>
-        <?php foreach( $books as $row ): 
+        <?php foreach( $books as $key => $row ): 
             // echo '<pre>';
             // print_r($row);
             // die();
             ?>
             <tr>
-                <td> <?php echo $row['id'];?> </td>
+                <td> <?php echo ++$key;?>  </td>
                 <td><?php echo $row['name'];?></td>
                
                 <td>
