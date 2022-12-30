@@ -68,11 +68,11 @@ $id = $_GET['id'];
 <div class="container-fluid px-4">
 <form action="" method="post" enctype ="multipart/form-data">
     TÊN MẶT HÀNG : 
-    <input class="form-control" type="text" name="name"> <br>
+    <input class="form-control" type="text" name="name" value="<?= $row['name'];?>"> <br>
     GIÁ BÁN :  
-    <input class="form-control" type="text" name="price"> <br>
+    <input class="form-control" type="text" name="price"  value="<?= $row['price'];?>"> <br>
     SỐ LƯỢNG :   
-    <input class="form-control" type="text" name="quantity "> <br>
+    <input class="form-control" type="text" name="quantity" value="<?= $row['quantity'];?>"> <br>
     THỂ LOẠI: 
     <select name="category_id" class="form-control">
             <?php foreach( $categories as $category ): ?>
@@ -80,7 +80,7 @@ $id = $_GET['id'];
             <?php endforeach; ?>
         </select> <br>
     ẢNH: <input type="file" name="image" value="<?= $row['image'];?>"> <br>
-    MÔ TẢ:  <input class="form-control" type="text" name="description "> <br>
+    MÔ TẢ:  <input class="form-control" type="text" name="description"value="<?= $row['description'];?>"> <br>
     TRẠNG THÁI : 
     <select name="status" class="form-control">
         <option value="0">Tắt</option>

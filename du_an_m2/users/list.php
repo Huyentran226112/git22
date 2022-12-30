@@ -45,7 +45,7 @@ $users = $stmt->fetchAll();
                 <td><?php echo $row['phone'];?></td>
                 <td><?php echo $row['email'];?></td>
                 <td><?php echo $row['password'];?></td>
-                <td> <img  height="200px" width="200px" src="<?php echo $row['image'];?>"></td>
+                <td> <img  height="150px" width="150px" src="<?php echo $row['image'];?>"></td>
                
                 <td>
                     <a class="btn btn-warning" href="edit.php?id=<?= $row['id'] ;?>" >Edit</a>   

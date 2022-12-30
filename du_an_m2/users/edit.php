@@ -64,7 +64,7 @@ $id = $_GET['id'];
 <?php include_once '../header.php'; ?>
 <div class="container-fluid px-4">
 <form action="" method="post" enctype ="multipart/form-data">
-    TÊN MẶT HÀNG : 
+    TÊN NHÂN VIÊN: 
     <input class="form-control" type="text" name="name" value="<?= $row['name'];?>"> <br>
     ĐỊA CHỈ:
       <input class="form-control" type="text" name="address" value="<?= $row['address'];?>"> <br>
