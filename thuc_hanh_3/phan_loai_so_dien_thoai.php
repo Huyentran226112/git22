@@ -4,6 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $viettel=[];
     $mobi=[];
     $vina=[];
+    
     // chuyen doi chuoi thanh mang 
     $ma_so= explode(",",$value);
     // duyet mang 

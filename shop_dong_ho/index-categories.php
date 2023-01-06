@@ -5,7 +5,7 @@ $stmt->setFetchMode(PDO::FETCH_ASSOC);//array
 $categories = $stmt->fetchAll();
 ?>
 <div class="container-fluid pt-5">
-        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Categories</span></h2>
+        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">THỂ LOẠI </span></h2>
         <div class="row px-xl-5 pb-3">
         <?php foreach( $categories as $key => $row ):?>
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
