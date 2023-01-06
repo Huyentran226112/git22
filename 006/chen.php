@@ -13,3 +13,9 @@ for($i = 1; $i < $n; $i++){
 echo'<pre>';
 print_r($A);
 die();
+?>
+<?php
+$x = 5;
+$y=
+
+?>

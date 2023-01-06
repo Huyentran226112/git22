@@ -24,4 +24,4 @@
         <div class="small">Logged in as:</div>
         SHOP ĐỒNG HỒ 
     </div>
-</nav>-
+</nav>

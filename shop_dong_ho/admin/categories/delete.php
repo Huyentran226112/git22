@@ -19,3 +19,4 @@ include_once '../db.php';//$conn
  // chuyen huong ve trang danh sach
  header("Location: list.php");
  ?>
+ 

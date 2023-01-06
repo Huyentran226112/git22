@@ -40,7 +40,7 @@ $orders = $stmt->fetchAll();
             <tr>
                 <td> <?php echo ++$key;?>  </td>
                 <td><?php echo $row['order_date'];?></td>
-                <td>   <?php echo number_format($row['total']);?>VNĐ</td>
+                <td>   <?php echo number_format($row['total']);?> VNĐ</td>
                 <td><?php echo $row['cutstomer_name'];?></td>
                 <td><?php echo $row['cutstomer_phone'];?></td>
                 <td><?php echo $row['cutstomer_address'];?></td>
