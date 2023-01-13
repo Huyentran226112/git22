@@ -27,3 +27,4 @@ class SinhVien{
     echo '<pre>';
     print_r($SinhVien1);
     echo '</pre>';
+     
