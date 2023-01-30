@@ -23,11 +23,12 @@
                 <td><?php echo $row['description'];?></td>
                 </td>
                 <td>
-                    <a href="index.php?controller=blog&action=edit&id=<?= $row['id'] ;?>">Edit</a> <br>
-                    <a href="index.php?controller=blog&action=destroy&id=<?= $row['id'] ;?>">Delete</a>
+                    <a class="btn btn-warning" href="index.php?controller=blog&action=edit&id=<?= $row['id'] ;?>">Edit</a>
+                    <a class="btn btn-danger" href="index.php?controller=blog&action=destroy&id=<?= $row['id'] ;?>">Delete</a>
                 </td>
                 
             </tr>
         <?php endforeach; ?>
     </tbody>
 </table>
+<a class="btn btn-primary"   href="index.php?controller=product&action=index"> chuyển trang product </a>  
