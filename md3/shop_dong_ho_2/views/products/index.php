@@ -1,5 +1,3 @@
-
- <h3>QUẢN LÝ MẶT HÀNG  </h3>
 <div class="container-fluid px-4"><br>
 <a class="btn btn-primary"   href="index.php?controller=product&action=create"> Thêm mới </a>  
 <table border="1" class="table">
@@ -13,7 +11,7 @@
             <th>ẢNH</th>
             <th>MÔ TẢ</th>
             <th>TRẠNG THÁI</th>
-            <th>ACTION</th>
+            <th>CÔNG CỤ </th>
            
         </tr>
     </thead>
@@ -53,4 +51,5 @@
         <?php endforeach; ?>
     </tbody>
 </table>
+
 

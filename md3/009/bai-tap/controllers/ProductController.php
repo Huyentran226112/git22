@@ -17,8 +17,9 @@ class ProductController extends Controller{
     }
     // goi toi trang them moi 
     public function create(){
-    //   goi view ma ko truyen bien 
-     $this->view('products/create.php');
+        // echo __METHOD__;
+
+        $this->view('products/create.php');
     }
     // xu li them moi
     public function store(){
@@ -27,19 +28,16 @@ class ProductController extends Controller{
         // die();
         // lay du lieu tu $_REQUEST gan vao mang data 
         $data = [
-            'name' => $_REQUEST['name'],
+            'title' => $_REQUEST['title'],
             'price' => $_REQUEST['price'],
             'quantity' => $_REQUEST['quantity'],
-            'category_id' => $_REQUEST['category_id'],
-            'image' => $_REQUEST['image'],
             'description' => $_REQUEST['description'],
-            'status' => $_REQUEST['status'],
         ];
         // goi model 
         $objProduct = new Product();
         $objProduct->save($data);
         // chuyen huowng ve trang danh sach
-        $this->redirect("index.php?controller=product&action=index.php");
+        $this->redirect('index.php?controller=product&action=index');
     }
 
     // Gọi tới trang chỉnh sửa
@@ -61,20 +59,17 @@ class ProductController extends Controller{
         $id = $_REQUEST['id'];
         // Lấy dữ liệu từ _REQUEST gán vào mảng data
         $data = [
-            'name' => $_REQUEST['name'],
+            'title' => $_REQUEST['title'],
             'price' => $_REQUEST['price'],
             'quantity' => $_REQUEST['quantity'],
-            'category_id' => $_REQUEST['category_id'],
-            'image' => $_REQUEST['image'],
             'description' => $_REQUEST['description'],
-            'status' => $_REQUEST['status'],
         ];
         // Gọi model
         $objProduct = new Product();
         $objProduct->update($id,$data);
 
         // Chuyển hướng về trang danh sách
-        $this->redirect("index.php?controller=product&action=index");
+        $this->redirect('index.php?controller=product&action=index');
     }
 
     public function destroy(){

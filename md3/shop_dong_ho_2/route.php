@@ -1,13 +1,4 @@
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-<?php 
-// $controller = new ProductController();
-// $controller->index();
-// index.php?action=index
-// index.php?action=create
-// echo '<pre>'; 
-// print_r($_REQUEST);
-// die();
+<?php  
 // Kiểm tra tồn tại chỉ số action trong mảng $_REQUEST
 if( isset( $_REQUEST['controller'] ) ){
     $controller = $_REQUEST['controller'];
@@ -26,13 +17,17 @@ switch ($controller) {
         include_once 'controllers/ProductController.php';
         $objController = new ProductController();
         break;
-    case 'blog':
-        include_once 'controllers/BlogController.php';
-        $objController = new BlogController();
+    case 'user':
+        include_once 'controllers/UserController.php';
+        $objController = new UserController();
         break;
-    case 'categorie':
-        include_once 'controllers/categorieController.php';
-        $objController = new categorieController();
+    case 'category':
+        include_once 'controllers/CategoryController.php';
+        $objController = new CategoryController();
+        break;
+    case 'order':
+        include_once 'controllers/OrderController.php';
+        $objController = new OrderController();
         break;
     default:
         # code...

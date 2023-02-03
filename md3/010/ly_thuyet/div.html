@@ -1,0 +1,35 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+      div { display: block; /* Hien thi khoi */ }
+      span { display: inline;/* Hien thi tren cung dong */ }
+      template { display: none;/* Khong hien thi */ }
+      .row { display: flex; } .col { flex-basis: 50%; }
+  </style>
+</head>
+<body>
+  <div style="background-color: red;">
+      <span>Khoi 1</span>
+      <span>Khoi 1.1</span>
+  </div>
+  <div style="background-color: yellow;">
+      Khoi 2
+  </div>
+  <template>
+      Khoi 3
+  </template>
+  <hr>
+  <div class="row">
+      <div class="col" style="background-color: yellow;"> Cot 1 </div>
+      <div class="col" style="background-color: red;"> Cot 2 </div>
+  </div>
+</body>
+</html>

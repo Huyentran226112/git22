@@ -1,24 +1,24 @@
 <?php
-include_once 'models/Product.php';
-class ProductController extends Controller{
+include_once 'models/User.php';
+class UserController extends Controller{
     // goi toi trang danh sach 
     public function index(){
         //  goi toi model
-        $objProduct = new Product();
+        $objuser = new User();
         // model thao tac voi CSDL tra ve controller 
-        $items = $objProduct->all();
+        $items = $objuser->all();
         // var_dump($items);
         // die();
         // truyen du lieu xuong view
         $params = [
             'items' => $items
         ];
-        $this->view('products/index.php',$params);
+        $this->view('users/index.php',$params);
     }
     // goi toi trang them moi 
     public function create(){
     //   goi view ma ko truyen bien 
-     $this->view('products/create.php');
+     $this->view('users/create.php');
     }
     // xu li them moi
     public function store(){
@@ -28,28 +28,28 @@ class ProductController extends Controller{
         // lay du lieu tu $_REQUEST gan vao mang data 
         $data = [
             'name' => $_REQUEST['name'],
-            'price' => $_REQUEST['price'],
-            'quantity' => $_REQUEST['quantity'],
-            'category_id' => $_REQUEST['category_id'],
-            'image' => $_REQUEST['image'],
-            'description' => $_REQUEST['description'],
-            'status' => $_REQUEST['status'],
+            'address' => $_REQUEST['address'],
+            'start_date' => $_REQUEST['start_date'],
+            'phone' => $_REQUEST['phone'],
+            'email' => $_REQUEST['email'],
+            'password' => $_REQUEST['password'],
+            'image' => $_REQUEST['image']
         ];
         // goi model 
-        $objProduct = new Product();
-        $objProduct->save($data);
+        $objuser = new User();
+        $objuser->save($data);
         // chuyen huowng ve trang danh sach
-        $this->redirect("index.php?controller=product&action=index.php");
+        $this->redirect("index.php?controller=user&action=index.php");
     }
 
     // Gọi tới trang chỉnh sửa
     public function edit(){
         $id = $_REQUEST['id'];
         // Gọi model
-        $objProduct = new Product();
-        $item = $objProduct->find($id);
+        $objuser = new User();
+        $item = $objuser->find($id);
         // truyen xuong view
-        include_once 'views/products/edit.php';
+        include_once 'views/users/edit.php';
     }
 
     // Xử lý chỉnh sửa
@@ -62,28 +62,28 @@ class ProductController extends Controller{
         // Lấy dữ liệu từ _REQUEST gán vào mảng data
         $data = [
             'name' => $_REQUEST['name'],
-            'price' => $_REQUEST['price'],
-            'quantity' => $_REQUEST['quantity'],
-            'category_id' => $_REQUEST['category_id'],
-            'image' => $_REQUEST['image'],
-            'description' => $_REQUEST['description'],
-            'status' => $_REQUEST['status'],
+            'address' => $_REQUEST['address'],
+            'start_date'=> $_REQUEST['start_date'],
+            'phone' => $_REQUEST['phone'],
+            'email' => $_REQUEST['email'],
+            'password' => $_REQUEST['password'],
+            'image' => $_REQUEST['image']
         ];
         // Gọi model
-        $objProduct = new Product();
-        $objProduct->update($id,$data);
+        $objuser = new User();
+        $objuser->update($id,$data);
 
         // Chuyển hướng về trang danh sách
-        $this->redirect("index.php?controller=product&action=index");
+        $this->redirect("index.php?controller=user&action=index");
     }
 
     public function destroy(){
         $id = $_REQUEST['id'];
         // Gọi model
-        $objProduct = new Product();
-        $objProduct->delete($id);
+        $objuser = new User();
+        $objuser->delete($id);
 
         // Chuyển hướng về trang danh sách
-        $this->redirect('index.php?controller=product&action=index');
+        $this->redirect('index.php?controller=user&action=index');
     }
 }

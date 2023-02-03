@@ -1,6 +1,6 @@
 <?php
 include_once 'models/Product.php';
-class ProductController{
+class ProductController extends Controller{
     // goi toi trang danh sach 
     public function index(){
         //  goi toi model
@@ -10,13 +10,15 @@ class ProductController{
         // var_dump($items);
         // die();
         // truyen du lieu xuong view
-        include_once 'views/products/index.php';
+        $params = [
+            'items' => $items
+        ];
+        $this->view('products/index.php',$params);
     }
     // goi toi trang them moi 
     public function create(){
-        // echo __METHOD__;
-
-        include_once 'views/products/create.php';
+    //   goi view ma ko truyen bien 
+     $this->view('products/create.php');
     }
     // xu li them moi
     public function store(){
@@ -25,17 +27,19 @@ class ProductController{
         // die();
         // lay du lieu tu $_REQUEST gan vao mang data 
         $data = [
-            'title' => $_REQUEST['title'],
+            'name' => $_REQUEST['name'],
             'price' => $_REQUEST['price'],
             'quantity' => $_REQUEST['quantity'],
+            'category_id' => $_REQUEST['category_id'],
+            'image' => $_REQUEST['image'],
             'description' => $_REQUEST['description'],
+            'status' => $_REQUEST['status'],
         ];
         // goi model 
         $objProduct = new Product();
         $objProduct->save($data);
         // chuyen huowng ve trang danh sach
-        header("location: index.php?controller=product&action=index");
-        die();
+        $this->redirect("index.php?controller=product&action=index.php");
     }
 
     // Gọi tới trang chỉnh sửa
@@ -57,18 +61,20 @@ class ProductController{
         $id = $_REQUEST['id'];
         // Lấy dữ liệu từ _REQUEST gán vào mảng data
         $data = [
-            'title' => $_REQUEST['title'],
+            'name' => $_REQUEST['name'],
             'price' => $_REQUEST['price'],
             'quantity' => $_REQUEST['quantity'],
+            'category_id' => $_REQUEST['category_id'],
+            'image' => $_REQUEST['image'],
             'description' => $_REQUEST['description'],
+            'status' => $_REQUEST['status'],
         ];
         // Gọi model
         $objProduct = new Product();
         $objProduct->update($id,$data);
 
         // Chuyển hướng về trang danh sách
-        header("Location: index.php?controller=product&action=index ");
-        die();
+        $this->redirect("index.php?controller=product&action=index");
     }
 
     public function destroy(){
@@ -78,7 +84,6 @@ class ProductController{
         $objProduct->delete($id);
 
         // Chuyển hướng về trang danh sách
-        header("Location: index.php?controller=product&action=index ");
-        die();
+        $this->redirect('index.php?controller=product&action=index');
     }
 }
