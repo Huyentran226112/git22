@@ -1,8 +1,9 @@
 @extends('admin.layouts.master')
 @section('content')
+
 <h3>Danh sách sản phẩm  </h3>
 <a class="btn btn-primary" href="{{route('products.create')}}">Thêm </a>
-<table class="table">
+<table class="table" style="text-align:center">
     <thead>
       <tr>
         <th scope="col">Số thứ tự</th>
@@ -19,7 +20,7 @@
         <tr>
             <td> {{++$key}}</td>
             <td> {{$product->name}}</td>
-            <td> {{$product->price}}</td>
+            <td> {{number_format($product->price)}} $</td>
             <td> {{$product->category->name}}</td>
             <td>
                 <img src="{{ asset('public/assets/product/' . $product->image) }}" alt=""
