@@ -15,8 +15,9 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::all();
+        // $categories = $query->orderBy('id ','DESC');
         $param = [
-            'categories'=>$categories
+            'categories'=>$categories,
         ];
         return view('admin.categories.index',$param);
      }
@@ -39,6 +40,7 @@ class CategoryController extends Controller
         $category->name = $request->name;
         // $category->description = $request->description;
         $category->save();
+        alert()->success('Thêm','thành công');
 
         return redirect()->route('categories.index');
     }
@@ -69,6 +71,8 @@ class CategoryController extends Controller
         $categories = Category::find($id);
         $categories->name = $request->name;
         $categories->save();
+        alert()->success('sửa','thành công');
+
         return redirect()->route('categories.index');
     }
 
@@ -78,6 +82,7 @@ class CategoryController extends Controller
     public function destroy(string $id)
     {
         Category::find($id)->delete();
+        alert()->success('xóa','thành công');
         return redirect()->route('categories.index');
     }
 }

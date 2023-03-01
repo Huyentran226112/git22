@@ -66,14 +66,23 @@
     <!-- end product Area -->
 
     <!-- Start exclusive deal Area -->
+    <style>
+        img.img-fluid {
+            width: 300px;
+            height: 200px;
+        }
+    </style>
     <section class="exclusive-deal-area">
         <div class="container-fluid">
+            <div class="section-title">
+                <h1>Sản phẩm nổi bật</h1>
+                <p>Thương hiệu mang đến sự thành công</p>
             <div class="row justify-content-center align-items-center">
                 <div class="col-lg-6 no-padding exclusive-left">
                     <div class="row clock_sec clockdiv" id="clockdiv">
                         <div class="col-lg-12">
-                            <h1>Exclusive Hot Deal Ends Soon!</h1>
-                            <p>Who are in extremely love with eco friendly system.</p>
+                            <h1>CAR WORLD!</h1>
+                            <p>Cỗ máy thời thượng tốt nhất hoặc không gì. </p>
                         </div>
                             {{-- <div class="col-lg-12">
                                 <div class="row clock-wrap">
@@ -96,44 +105,29 @@
                                 </div>
                             </div> --}}
                     </div>
-                    <a href="" class="primary-btn">Shop Now</a>
+                    {{-- <a href="" class="primary-btn">Shop Now</a> --}}
                 </div>
                 <div class="col-lg-6 no-padding exclusive-right">
+                    {{-- <h5>san pham noi bat</h5> --}}
                     <div class="active-exclusive-product-slider">
-                        <!-- single exclusive carousel -->
+                        @foreach ($products as $product)
                         <div class="single-exclusive-slider">
-                            <img class="img-fluid" src="{{ asset('shop/img/product/mec.jpg')}}"  alt="">
-                            <div class="product-details">
+                            <img class="img-fluid" src="{{ asset('public/assets/product/' . $product->image) }}"  >
+                            <div class="product-details"><br>
+                                <h4>{{ $product->name }}</h4>
                                 <div class="price">
-                                    <h6>$150.00</h6>
-                                    <h6 class="l-through">$210.00</h6>
+                                    <h6>{{ number_format($product->price) }} $</h6>
                                 </div>
-                                <h4>addidas New Hammer sole
-                                    for Sports person</h4>
                                 <div class="add-bag d-flex align-items-center justify-content-center">
                                     <a class="add-btn" href=""><span class="ti-bag"></span></a>
-                                    <span class="add-text text-uppercase">Add to Bag</span>
+                                    <span class="add-text text-uppercase">Giỏ hàng</span>
                                 </div>
                             </div>
                         </div>
-                        <!-- single exclusive carousel -->
-                        <div class="single-exclusive-slider">
-                            <img class="img-fluid" src="{{ asset('shop/img/product/e-p1.png')}}" alt="">
-                            <div class="product-details">
-                                <div class="price">
-                                    <h6>$150.00</h6>
-                                    <h6 class="l-through">$210.00</h6>
-                                </div>
-                                <h4>addidas New Hammer sole
-                                    for Sports person</h4>
-                                <div class="add-bag d-flex align-items-center justify-content-center">
-                                    <a class="add-btn" href=""><span class="ti-bag"></span></a>
-                                    <span class="add-text text-uppercase">Add to Bag</span>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     </section>
@@ -143,9 +137,7 @@
     <section class="brand-area section_gap">
         <div class="container">
             <div class="row">
-                <a class="col single-img" href="#">
-                    <img class="img-fluid d-block mx-auto" src="{{ asset('shop/img/brand/1.png')}}" alt="">
-                </a>
+
                 <a class="col single-img" href="#">
                     <img class="img-fluid d-block mx-auto" src="{{ asset('shop/img/brand/2.png')}}" alt="">
                 </a>
@@ -157,6 +149,12 @@
                 </a>
                 <a class="col single-img" href="#">
                     <img class="img-fluid d-block mx-auto" src="{{ asset('shop/img/brand/5.png')}}" alt="">
+                </a>
+                <a class="col single-img" href="#">
+                    <img class="img-fluid d-block mx-auto" src="{{ asset('shop/img/brand/6.png')}}" alt="">
+                </a>
+                <a class="col single-img" href="#">
+                    <img class="img-fluid d-block mx-auto" src="{{ asset('shop/img/brand/7.png')}}" alt="">
                 </a>
             </div>
         </div>

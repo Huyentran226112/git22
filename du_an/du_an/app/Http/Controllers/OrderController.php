@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\RedirectResponse;
+use App\Models\Order;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
+use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
@@ -13,11 +13,13 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $items = Order::all();
+
+        return view('admin.orders.index',compact('items'));
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new resource    .
      */
     public function create()
     {
@@ -37,7 +39,12 @@ class OrderController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $items=DB::table('ordersdetail')
+        ->join('orders','ordersdetail.order_id','=','orders.id')
+        ->join('products','ordersdetail.product_id','=','products.id')
+        ->select('products.*', 'ordersdetail.*','orders.id')
+        ->where('orders.id','=',$id)->get();
+        return view('admin.orders.orderdetail',compact('items'));
     }
 
     /**
@@ -60,6 +67,6 @@ class OrderController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+
     }
 }

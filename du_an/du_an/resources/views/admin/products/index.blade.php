@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 @section('content')
-
+@include('sweetalert::alert')
 <h3>Danh sách sản phẩm  </h3>
 <a class="btn btn-primary" href="{{route('products.create')}}">Thêm </a>
 <table class="table" style="text-align:center">

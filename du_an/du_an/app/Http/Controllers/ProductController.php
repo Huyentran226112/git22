@@ -58,6 +58,7 @@ class ProductController extends Controller
             $product->image = $new_image;
             $data['product_image'] = $new_image;
         }
+        alert()->success('thêm','thành công');
         $product->save();
         return redirect()->route('products.index');
     }
@@ -85,6 +86,7 @@ class ProductController extends Controller
             'product' => $product ,
             'categories' => $categories
         ];
+
         return view('admin.products.edit' , $param);
     }
 
@@ -116,6 +118,7 @@ class ProductController extends Controller
 
         $data['product_image']=$new_image;
         }
+        alert()->success('sửa','thành công');
         $product->save();
         return redirect()->route('products.index');
 
@@ -127,6 +130,7 @@ class ProductController extends Controller
     public function destroy(string $id)
     {
         Product::find($id)->delete();
+        alert()->success('xóa','thành công');
         return redirect()->route('products.index');
     }
 }

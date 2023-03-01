@@ -1,7 +1,8 @@
 @extends('admin.layouts.master')
 @section('content')
 <main id="main">
-    <h1>Chỉnh sửa Blog</h1>
+    @include('sweetalert::alert')
+    <h1>Chỉnh sửa </h1>
     <form  action="{{route('categories.update',[$categories->id])}}" method="POST">
         @method('PUT')
         @csrf

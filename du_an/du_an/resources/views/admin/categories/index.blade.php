@@ -1,6 +1,8 @@
 @extends('admin.layouts.master')
 @section('content')
 <h3>Danh sách thể loại</h3>
+@include('sweetalert::alert')
+
 <a class="btn btn-primary" href="{{route('categories.create')}}">Thêm </a>
 <table class="table">
     <thead>
@@ -14,7 +16,7 @@
     <tbody>
         @foreach ($categories as $key => $category)
         <tr>
-            <td> {{$category['id']}}</td>
+            <td> {{ ++ $key}}</td>
             <td> {{$category['name']}}</td>
             <td>
                 <form action="{{route('categories.destroy',[$category->id])}}" method="post">

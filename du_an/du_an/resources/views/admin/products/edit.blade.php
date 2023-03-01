@@ -1,6 +1,7 @@
 @extends('admin.layouts.master')
 @section('content')
 <main id="main">
+    @include('sweetalert::alert')
     <h1>Chỉnh sửa sản phẩm</h1>
     <form  action="{{route('products.update',[$product->id])}}" method="POST"  enctype="multipart/form-data">
         @method('PUT')
@@ -25,7 +26,7 @@
             </select>
             <label class="form-label">Mô tả</label>
 
-            <input type="text" name="description" value='{{$product->description}}' class="form-control">
+            <textarea class="form-control" placeholder="Miêu tả" id="editor"  name="description" rows="4" cols="4">{{$product->description}}</textarea>
             <label class="form-label">Ảnh</label>
 
             <input type="file" name="image" value='{{$product->image}}' class="form-control">

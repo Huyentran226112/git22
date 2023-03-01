@@ -78,4 +78,24 @@ class ShopController extends Controller
     {
         //
     }
+   //view giỏ hàng
+   public function cart()
+   {
+       return view('shop.includes.cart');
+   }
+   //thêm vào giỏ hàng
+   public function addToCart($id)
+   {
+
+   }
+   //cập nhật giỏ hàng
+   public function update1(Request $request)
+   {
+
+   }
+   //xóa giỏ hàng
+   public function remove(Request $request)
+   {
+     
+   }
 }

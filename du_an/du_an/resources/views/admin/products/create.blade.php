@@ -1,6 +1,7 @@
 @extends('admin.layouts.master')
 @section('content')
 <main id="main">
+    @include('sweetalert::alert')
     <h1>Thêm sản phẩm</h1>
     <form action="{{route('products.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
@@ -28,7 +29,7 @@
         </div>
         <div class="mb-3">
             <label class="form-label">Mô tả:</label>
-            <input type="text" id="fname" name="description" class="form-control">
+            <textarea class="form-control" type="text" id="editor" placeholder="Mô tả" name="description" ></textarea>
         </div>
         <div class="mb-3">
             <label class="form-label">Ảnh</label>

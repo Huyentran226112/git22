@@ -1,6 +1,7 @@
 @extends('admin.layouts.master')
 @section('content')
 <main id="main">
+    @include('sweetalert::alert')
     <h1>Thêm danh mục</h1>
     <form action="{{route('categories.store')}}" method="POST">
         @csrf
