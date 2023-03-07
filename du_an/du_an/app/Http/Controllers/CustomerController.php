@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Customer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+
+// use Illuminate\Support\Facades\Auth;
+// use Illuminate\Support\Facades\Log;
 
 class CustomerController extends Controller
 {
@@ -13,7 +17,7 @@ class CustomerController extends Controller
     public function index()
     {
         $customers = Customer::all();
-        
+
         return view('admin.customers.index',compact('customers'));
     }
 
@@ -60,8 +64,44 @@ class CustomerController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
-    {
-        //
+    public function destroy(string $id){
+        $customers = Customer::find($id);
+        $customers->delete();
+        alert()->success('Khách hàng đã được đưa vào thùng rác!');
+        return redirect()->route('customer.index');
+
     }
+    public function trash()
+    {
+        $softs = Customer::onlyTrashed()->get();
+        return view('admin.customers.trash', compact('softs'));
+    }
+    public function restore($id)
+    {
+        try {
+            $softs = Customer::withTrashed()->find($id);
+            $softs->restore();
+            alert()->success('Khôi phục khách hàngThành Công!');
+            return redirect()->route('customer.index');
+        } catch (\exception $e) {
+            Log::error($e->getMessage());
+            toast('Có Lỗi Xảy Ra!', 'error', 'top-right');
+            return redirect()->route('customer.index');
+        }
+    }
+     //xóa vĩnh viễn
+     public function deleteforever($id)
+     {
+         try {
+             $softs = Customer::withTrashed()->find($id);
+             $softs->forceDelete();
+           alert()->success('Xóa Vĩnh Viễn Thành Công!');
+             return redirect()->route('customer.index');
+         } catch (\exception $e) {
+             Log::error($e->getMessage());
+             toast('Có Lỗi Xảy Ra!', 'error', 'top-right');
+             return redirect()->route('customer.index');
+         }
+     }
+
 }

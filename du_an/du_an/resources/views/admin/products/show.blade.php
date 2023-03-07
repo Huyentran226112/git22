@@ -5,7 +5,7 @@
                     <h1 class="mb-1">Chi tiết sản phẩm</h1>
                     <nav>
                       <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{route('products.index')}}">Trang sản phẩm                 </a></li>
+                        <li class="breadcrumb-item"><a href="{{route('products.index')}}">Trang sản phẩm</a></li>
                       </ol>
                     </nav>
                   </div>
@@ -59,24 +59,15 @@
                                         </tr>
                                     </tbody>
                                 </table>
-                                <label>Mô tả:    {!! $productshow->description !!}</label>
+                                <label>Mô tả:{!! $productshow->description !!}</label>
                             </div>
                         </div>
                         </div>
                     </div>
                 </div>
             </div>
-
             </div>
             </div>
             </div>
             </main>
-
-
-
-
-
-
-
-
         @endsection

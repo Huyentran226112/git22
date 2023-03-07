@@ -28,7 +28,6 @@
 
             <textarea class="form-control" placeholder="Miêu tả" id="editor"  name="description" rows="4" cols="4">{{$product->description}}</textarea>
             <label class="form-label">Ảnh</label>
-
             <input type="file" name="image" value='{{$product->image}}' class="form-control">
             <label class="form-label">Trạng thái</label>
             <select name="status" class="form-select" id="inputGroupSelect02">

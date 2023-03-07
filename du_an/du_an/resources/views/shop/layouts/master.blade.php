@@ -15,7 +15,7 @@
     <!-- meta character set -->
     <meta charset="UTF-8">
     <!-- Site Title -->
-    <title>Karma Shop</title>
+    <title>huyentran shop</title>
     <!--
   CSS
   ============================================= -->
@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="{{ asset('shop/css/ion.rangeSlider.skinFlat.css') }}" />
     <link rel="stylesheet" href="{{ asset('shop/css/magnific-popup.css') }}">
     <link rel="stylesheet" href="{{ asset('shop/css/main.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -37,35 +38,19 @@
 
     @include('shop.includes.header')
 
-    <!-- start banner Area -->
-
-    <!-- End banner Area -->
-
-    <!-- start features Area -->
     @include('shop.includes.sidebar')
     @yield('content')
 
-    <!-- end features Area -->
-
-    <!-- Start category Area -->
-
-    <!-- End category Area -->
-
-    <!-- start product Area -->
     <section class="owl-carousel active-product-area section_gap">
-        <!-- single product slide -->
 
-                    <!-- single product -->
 
-                </div>
-            </div>
         </div>
-        <!-- single product slide -->
+        </div>
+        </div>
+
 
     </section>
-    <!-- end product Area -->
 
-    <!-- Start exclusive deal Area -->
     <style>
         img.img-fluid {
             width: 300px;
@@ -74,60 +59,40 @@
     </style>
     <section class="exclusive-deal-area">
         <div class="container-fluid">
-            <div class="section-title">
+            <div class="section-title1">
                 <h1>Sản phẩm nổi bật</h1>
                 <p>Thương hiệu mang đến sự thành công</p>
-            <div class="row justify-content-center align-items-center">
-                <div class="col-lg-6 no-padding exclusive-left">
-                    <div class="row clock_sec clockdiv" id="clockdiv">
-                        <div class="col-lg-12">
-                            <h1>CAR WORLD!</h1>
-                            <p>Cỗ máy thời thượng tốt nhất hoặc không gì. </p>
-                        </div>
-                            {{-- <div class="col-lg-12">
-                                <div class="row clock-wrap">
-                                    <div class="col clockinner1 clockinner">
-                                        <h1 class="days">150</h1>
-                                        <span class="smalltext">Days</span>
-                                    </div>
-                                    <div class="col clockinner clockinner1">
-                                        <h1 class="hours">23</h1>
-                                        <span class="smalltext">Hours</span>
-                                    </div>
-                                    <div class="col clockinner clockinner1">
-                                        <h1 class="minutes">47</h1>
-                                        <span class="smalltext">Mins</span>
-                                    </div>
-                                    <div class="col clockinner clockinner1">
-                                        <h1 class="seconds">59</h1>
-                                        <span class="smalltext">Secs</span>
-                                    </div>
-                                </div>
-                            </div> --}}
-                    </div>
-                    {{-- <a href="" class="primary-btn">Shop Now</a> --}}
-                </div>
-                <div class="col-lg-6 no-padding exclusive-right">
-                    {{-- <h5>san pham noi bat</h5> --}}
-                    <div class="active-exclusive-product-slider">
-                        @foreach ($products as $product)
-                        <div class="single-exclusive-slider">
-                            <img class="img-fluid" src="{{ asset('public/assets/product/' . $product->image) }}"  >
-                            <div class="product-details"><br>
-                                <h4>{{ $product->name }}</h4>
-                                <div class="price">
-                                    <h6>{{ number_format($product->price) }} $</h6>
-                                </div>
-                                <div class="add-bag d-flex align-items-center justify-content-center">
-                                    <a class="add-btn" href=""><span class="ti-bag"></span></a>
-                                    <span class="add-text text-uppercase">Giỏ hàng</span>
-                                </div>
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-lg-6 no-padding exclusive-left">
+                        <div class="row clock_sec clockdiv" id="clockdiv">
+                            <div class="col-lg-12">
+                                <h1>CAR WORLD!</h1>
+                                <p>Cỗ máy thời thượng tốt nhất hoặc không gì. </p>
                             </div>
                         </div>
-                        @endforeach
+                    </div>
+                    <div class="col-lg-6 no-padding exclusive-right">
+                        {{-- <h5>san pham noi bat</h5> --}}
+                        <div class="active-exclusive-product-slider">
+                            @foreach ($hot_products as $product)
+                                <div class="single-exclusive-slider">
+                                    <img class="img-fluid"
+                                        src="{{ asset('public/assets/product/' . $product->image) }}">
+                                    <div class="product-details"><br>
+                                        <h4>{{ $product->name }}</h4>
+                                        <div class="price">
+                                            <h6>{{ number_format($product->price) }} $</h6>
+                                        </div>
+                                        <div class="add-bag d-flex align-items-center justify-content-center">
+                                            <a class="add-btn" href=""><span class="ti-bag"></span></a>
+                                            <span class="add-text text-uppercase">Giỏ hàng</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
-            </div>
             </div>
         </div>
     </section>
@@ -137,25 +102,13 @@
     <section class="brand-area section_gap">
         <div class="container">
             <div class="row">
+                @foreach ($categories as $category)
+                    <a class="col single-img" href="{{ route('category_detail', [$category->id]) }}">
+                        <img class="img-fluid d-block mx-auto" src="{{ asset('public/assets/category/' . $category->image) }}">
+                    </a>
+                @endforeach
 
-                <a class="col single-img" href="#">
-                    <img class="img-fluid d-block mx-auto" src="{{ asset('shop/img/brand/2.png')}}" alt="">
-                </a>
-                <a class="col single-img" href="#">
-                    <img class="img-fluid d-block mx-auto" src="{{ asset('shop/img/brand/3.png')}}" alt="">
-                </a>
-                <a class="col single-img" href="#">
-                    <img class="img-fluid d-block mx-auto" src="{{ asset('shop/img/brand/4.png')}}" alt="">
-                </a>
-                <a class="col single-img" href="#">
-                    <img class="img-fluid d-block mx-auto" src="{{ asset('shop/img/brand/5.png')}}" alt="">
-                </a>
-                <a class="col single-img" href="#">
-                    <img class="img-fluid d-block mx-auto" src="{{ asset('shop/img/brand/6.png')}}" alt="">
-                </a>
-                <a class="col single-img" href="#">
-                    <img class="img-fluid d-block mx-auto" src="{{ asset('shop/img/brand/7.png')}}" alt="">
-                </a>
+
             </div>
         </div>
     </section>

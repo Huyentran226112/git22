@@ -10,8 +10,8 @@
           <div class="iq-menu-bt-sidebar">
               <div class="iq-menu-bt align-self-center">
                   <div class="wrapper-menu">
-                      <div class="main-circle"><i class="ri-arrow-left-s-line"></i></div>
-                      <div class="hover-circle"><i class="ri-arrow-right-s-line"></i></div>
+                      <div class="main-circle"><i class="bi bi-house"></i></div>
+                      <div class="hover-circle"><i class="bi bi-house"></i></div>
                   </div>
               </div>
           </div>
@@ -39,6 +39,7 @@
                               <ul id="ui-elements" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle" style="">
                                 <li><a href="{{route('products.index')}}"><i class="las la-id-card-alt"></i>Danh sách</a></li>
                             </ul>
+                          
                   </li>
 
                   <li>
@@ -48,6 +49,7 @@
                             <ul id="ui-elements1" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle" style="">
                               <li><a href="{{route('customers.index')}}"><i class="las la-id-card-alt"></i>Danh sách</a></li>
                           </ul>
+
                 </li>
                 <li>
                     <a href="#ui-elements12" class="iq-waves-effect collapsed" data-toggle="collapse"

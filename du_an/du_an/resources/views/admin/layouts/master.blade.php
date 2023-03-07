@@ -10,19 +10,20 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="images/favicon.ico" />
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{asset('admin/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('admin/css/bootstrap.min.css') }}">
     <!-- Typography CSS -->
-    <link rel="stylesheet" href="{{asset('admin/css/typography.css')}}">
+    <link rel="stylesheet" href="{{ asset('admin/css/typography.css') }}">
     <!-- Style CSS -->
-    <link rel="stylesheet" href="{{asset('admin/css/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('admin/css/style.css') }}">
     <!-- Responsive CSS -->
-    <link rel="stylesheet" href="{{asset('admin/css/responsive.css')}}">
+    <link rel="stylesheet" href="{{ asset('admin/css/responsive.css') }}">
     <script src="https://cdn.ckeditor.com/ckeditor5/35.4.0/classic/ckeditor.js"></script>
     <script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
-
+    {{-- icon boostrap --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
     <!-- Google Tag Manager -->
-{{--
+    {{--
     <script>
         (function(w, d, s, l, i) {
             w[l] = w[l] || [];
@@ -60,7 +61,7 @@
         <!-- TOP Nav Bar END -->
         <!-- Page Content  -->
         <div id="content-page" class="content-page">
-          @yield('content')
+            @yield('content')
         </div>
     </div>
     <!-- Wrapper END -->
@@ -103,68 +104,68 @@
     <!-- color-customizer END -->
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="{{asset('admin/js/jquery.min.js')}}"></script>
-    <script src="{{asset('admin/js/popper.min.js')}}"></script>
-    <script src="{{asset('admin/js/bootstrap.min.js')}}"></script>
+    <script src="{{ asset('admin/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('admin/js/popper.min.js') }}"></script>
+    <script src="{{ asset('admin/js/bootstrap.min.js') }}"></script>
     <!-- Appear JavaScript -->
-    <script src="{{asset('admin/js/jquery.appear.js')}}"></script>
+    <script src="{{ asset('admin/js/jquery.appear.js') }}"></script>
     <!-- Countdown JavaScript -->
-    <script src="{{asset('admin/js/countdown.min.js')}}"></script>
+    <script src="{{ asset('admin/js/countdown.min.js') }}"></script>
     <!-- Counterup JavaScript -->
-    <script src="{{asset('admin/js/waypoints.min.js')}}"></script>
-    <script src="{{asset('admin/js/jquery.counterup.min.js')}}"></script>
+    <script src="{{ asset('admin/js/waypoints.min.js') }}"></script>
+    <script src="{{ asset('admin/js/jquery.counterup.min.js') }}"></script>
     <!-- Wow JavaScript -->
-    <script src="{{asset('admin/js/wow.min.js')}}"></script>
+    <script src="{{ asset('admin/js/wow.min.js') }}"></script>
     <!-- Apexcharts JavaScript -->
-    <script src="{{asset('admin/js/apexcharts.js')}}"></script>
+    <script src="{{ asset('admin/js/apexcharts.js') }}"></script>
     <!-- Slick JavaScript -->
-    <script src="{{asset('admin/js/slick.min.js')}}"></script>
+    <script src="{{ asset('admin/js/slick.min.js') }}"></script>
     <!-- Select2 JavaScript -->
-    <script src="{{asset('admin/js/select2.min.js')}}"></script>
+    <script src="{{ asset('admin/js/select2.min.js') }}"></script>
     <!-- Owl Carousel JavaScript -->
-    <script src="{{asset('admin/js/owl.carousel.min.js')}}"></script>
+    <script src="{{ asset('admin/js/owl.carousel.min.js') }}"></script>
     <!-- Magnific Popup JavaScript -->
-    <script src="{{asset('admin/js/jquery.magnific-popup.min.js')}}"></script>
+    <script src="{{ asset('admin/js/jquery.magnific-popup.min.js') }}"></script>
     <!-- Smooth Scrollbar JavaScript -->
-    <script src="{{asset('admin/js/smooth-scrollbar.js')}}"></script>
+    <script src="{{ asset('admin/js/smooth-scrollbar.js') }}"></script>
     <!-- lottie JavaScript -->
-    <script src="{{asset('admin/js/lottie.js')}}"></script>
+    <script src="{{ asset('admin/js/lottie.js') }}"></script>
     <!-- am core JavaScript -->
-    <script src="{{asset('admin/js/core.js')}}"></script>
+    <script src="{{ asset('admin/js/core.js') }}"></script>
     <!-- am charts JavaScript -->
-    <script src="{{asset('admin/js/charts.js')}}"></script>
+    <script src="{{ asset('admin/js/charts.js') }}"></script>
     <!-- am animated JavaScript -->
-    <script src="{{asset('admin/js/animated.js')}}"></script>
+    <script src="{{ asset('admin/js/animated.js') }}"></script>
     <!-- am kelly JavaScript -->
-    <script src="{{asset('admin/js/kelly.js')}}"></script>
+    <script src="{{ asset('admin/js/kelly.js') }}"></script>
     <!-- am maps JavaScript -->
-    <script src="{{asset('admin/js/maps.js')}}"></script>
+    <script src="{{ asset('admin/js/maps.js') }}"></script>
     <!-- am worldLow JavaScript -->
-    <script src="{{asset('admin/js/worldLow.js')}}"></script>
+    <script src="{{ asset('admin/js/worldLow.js') }}"></script>
     <!-- Raphael-min JavaScript -->
-    <script src="{{asset('admin/js/raphael-min.js')}}"></script>
+    <script src="{{ asset('admin/js/raphael-min.js') }}"></script>
     <!-- Morris JavaScript -->
-    <script src="{{asset('admin/js/morris.js')}}"></script>
+    <script src="{{ asset('admin/js/morris.js') }}"></script>
     <!-- Morris min JavaScript -->
-    <script src="{{asset('admin/js/morris.min.js')}}"></script>
+    <script src="{{ asset('admin/js/morris.min.js') }}"></script>
     <!-- Flatpicker Js -->
-    <script src="{{asset('admin/js/flatpickr.js')}}"></script>
+    <script src="{{ asset('admin/js/flatpickr.js') }}"></script>
     <!-- Style Customizer -->
-    <script src="{{asset('admin/js/style-customizer.js')}}"></script>
+    <script src="{{ asset('admin/js/style-customizer.js') }}"></script>
     <!-- Chart Custom JavaScript -->
-    <script src="{{asset('admin/js/chart-custom.js')}}"></script>
+    <script src="{{ asset('admin/js/chart-custom.js') }}"></script>
     <!-- Custom JavaScript -->
-    <script src="{{asset('admin/js/custom.js')}}"></script>
+    <script src="{{ asset('admin/js/custom.js') }}"></script>
     @yield('scripts')
 
 
     <script>
-      ClassicEditor
-          .create( document.querySelector( '#editor' ) )
-          .catch( error => {
-              console.error( error );
-          } );
-  </script>
+        ClassicEditor
+            .create(document.querySelector('#editor'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
 </body>
 
 </html>

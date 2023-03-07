@@ -55,7 +55,6 @@ class UserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
     }
 
     /**
@@ -127,4 +126,10 @@ class UserController extends Controller
             Log::error("message:".$e->getMessage());
         }
       }
+    //đăng xuất
+      public function logout(){
+        Auth::logout();
+        return redirect()->route('login');
+      }
+
 }
